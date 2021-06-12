@@ -1,0 +1,76 @@
+@import "../../assets/mixins.scss";
+
+.header{
+    max-width: 1600px;
+    margin: auto;
+    @include flex-align-justify-between();
+    ul{
+        @include flex-align-justify-center();
+        li{
+            padding: 1.5rem 2rem;
+            a{
+                font-size: 1.2rem;
+                color: white;
+                
+            }
+        }
+        .link__projects{
+            padding-left: 0;
+        }
+        .icon-linkedln{
+            height: 40px; 
+            width: 40px; 
+            background-color: white; 
+            border-radius: 50%; 
+            border: none;
+            margin-top: 10px;
+        }
+    }
+}
+.eyes{
+    position: relative;
+    top: -84px;
+    left: 50%;
+    .eye{
+        position: relative;
+        width: 35px;
+        height: 35px;
+        display: block;
+        background: white;
+        margin: 0 15px;
+        border-radius:50% ;
+        &::before{
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 25px;
+            transform: translate(-50%, -50%);
+            width: 15px;
+            height: 15px;
+            background: black;
+            border-radius: 50%;
+        }
+        &:hover{
+            &::before{
+                height: 22px;
+                width: 22px;
+            }
+        }
+    }
+    .eyelash{
+        position: absolute;
+        background: url("../../assets/images/lash-white.svg") no-repeat;
+        height: 15px;
+        width: 40px;
+        top: -15px;
+        left: 20px;
+        opacity: 0;
+    }
+    &:hover{
+        .eyelash{
+            opacity: 1;
+        }
+    }
+}
+
+
