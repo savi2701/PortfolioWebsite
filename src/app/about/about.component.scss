@@ -1,0 +1,96 @@
+@import "../../assets/mixins.scss";
+
+.container{
+    max-width: 1600px;
+    margin: auto;
+    padding: 200px 140px 50px;
+    @include flex-align-justify-center();
+    align-items: flex-start;
+    img{
+        border-radius: 20px;
+        margin-right: 15rem;
+    }
+    &__text{
+        color: white;
+        flex: 1;
+        text-align: justify;
+        .heading{
+            font-family: Bogart;
+            font-size: 2rem;
+            margin-bottom: 2rem;
+        }
+        .subheading{
+            p{
+                font-size: 1.25rem;
+                margin-bottom: 1.5rem;
+            }
+        }
+    }
+}
+
+.history{
+    max-width: 1600px;
+    margin: auto;
+    color: white;
+    padding: 96px 140px;
+    .heading{
+        font-family: Bogart;
+        font-size: 2rem;
+    }
+    &-body{
+        @include flex-align-justify-center();
+    }
+    .cells{
+        display: grid;
+        grid-template-columns: repeat(6, 1fr);
+        grid-template-rows: repeat(5,1fr);
+        grid-gap: 1rem;
+        padding: 4rem 0 4rem 4rem;
+        .cell{
+            background-color: #222;
+            color: white;
+            font-size: 1.25rem;
+            align-items: flex-start;
+            width: 350px;
+            border-radius: 10px;
+            padding: 1.75rem 1rem;
+            line-height: 1.2;
+            position: relative;
+            transition: 3s ease-in;
+            @include flex-align-justify-between();
+            align-items: flex-start;
+            &:hover{
+                .cell-overlay{
+                    display: block;
+                }
+                .cell-body{
+                    display: none;
+                }
+            }
+            
+            p{
+                font-size: 0.95rem;
+            }
+            &:nth-child(1){
+                grid-column: 1/span 2;
+                grid-row: 5/5;
+            }
+            &:nth-child(2){
+                grid-column: 2/span 2;
+                grid-row: 4/4;
+            }
+            &:nth-child(3){
+                grid-column: 3/span 2;
+                grid-row: 3/3;
+            }
+            &:nth-child(4){
+                grid-column: 4/span 2;
+                grid-row: 2/2;
+            }
+            &:nth-child(5){
+                grid-column: 5/span 2;
+                grid-row: 1/1;
+            }
+        }
+    } 
+}

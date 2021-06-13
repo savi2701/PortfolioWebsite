@@ -1,5 +1,9 @@
 /* You can add global styles to this file, and also import other style files */
 @import url('https://fonts.googleapis.com/css2?family=Baloo+Tammudu+2&display=swap');
+@font-face{
+    font-family: Bogart;
+    src: url(./assets/bogart.otf);
+}
 *{
     padding: 0;
     margin: 0;
@@ -8,6 +12,8 @@
 }
 body{
     background-color: black;
+    overscroll-behavior: none;
+    overflow-x: hidden;
 }
 ul{
     list-style: none;

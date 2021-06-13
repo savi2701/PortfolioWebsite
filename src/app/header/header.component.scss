@@ -4,6 +4,12 @@
     max-width: 1600px;
     margin: auto;
     @include flex-align-justify-between();
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: black;
+    z-index: 99;
     ul{
         @include flex-align-justify-center();
         li{
@@ -11,7 +17,9 @@
             a{
                 font-size: 1.2rem;
                 color: white;
-                
+                &:hover, &.active{
+                    border-bottom: 4px solid #a162e8;
+                }
             }
         }
         .link__projects{
@@ -28,9 +36,6 @@
     }
 }
 .eyes{
-    position: relative;
-    top: -84px;
-    left: 50%;
     .eye{
         position: relative;
         width: 35px;
@@ -58,13 +63,14 @@
         }
     }
     .eyelash{
-        position: absolute;
+        position: fixed;
         background: url("../../assets/images/lash-white.svg") no-repeat;
         height: 15px;
         width: 40px;
-        top: -15px;
-        left: 20px;
+        top: 27px;
+        margin-left: 25px;
         opacity: 0;
+        transform: scale(1.5);
     }
     &:hover{
         .eyelash{
