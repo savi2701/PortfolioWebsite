@@ -3,8 +3,9 @@
 .container{
     max-width: 1600px;
     margin: auto;
-    padding: 200px 140px 50px;
+    padding: 280px 140px 50px;
     @include flex-align-justify-between();
+    position: relative;
     .heading{
         font-family: Bogart;
         font-size: 6.5rem;
@@ -18,5 +19,112 @@
         line-height: 1.4;
         font-size: 1.5rem;
         color: white;
+    }
+    &-img{
+        background-color: #222;
+        border-radius: 20px;
+        padding: 2rem;
+        position: relative;
+    }
+    .color{
+        position: absolute;
+        width: 135px;
+        height: 135px;
+        border-radius: 20px;
+        z-index: 2;
+    }
+    .one{
+        background: linear-gradient(180deg,#edca85,#f093b0);
+        top: -135px;
+        left: -135px;
+    }
+    .two{
+        background: linear-gradient(180deg,#b097f2,#a0e9ff);
+        top: -135px;
+        right: -135px;
+    }
+    .three{
+        background: linear-gradient(180deg,#edca85,#f093b0);
+        bottom: -135px;
+        right: -135px
+    }
+    .four{
+        background: linear-gradient(180deg,#db85b4,#b097f2);
+        bottom: -135px;
+        left: -135px;
+    }
+    .five{
+        background: linear-gradient(180deg,#b097f2,#a0e9ff);
+        bottom: -270px;
+        left: 0;
+    }
+}
+
+#head{
+    animation: head-rotation 3s ease-in-out forwards infinite;
+    transform-origin: bottom;
+    transform-box: fill-box;
+}
+
+#coffee{
+    animation: coffee 1s ease-in-out infinite alternate;
+    transform-origin: bottom;
+}
+#todo1{
+    animation: todo 1s normal forwards infinite;
+}
+#todo2{
+    animation: todo2 1s normal forwards infinite;
+}
+#todo3{
+    animation: todo3 1s normal forwards infinite;
+}
+
+@keyframes head-rotation{
+    0%{transform: rotate(10deg);}
+	50%{transform: rotate(-5deg)}
+	100%{transform: rotate(10deg);}
+    
+}
+
+@keyframes coffee{
+    from{
+        transform: rotateX(0deg);
+    }
+    to{
+        transform: rotateX(30deg);
+    }
+}
+@keyframes todo{
+    0%{
+        opacity: 1;
+    }
+    30%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
+}
+@keyframes todo2{
+    0%{
+        opacity: 1;
+    }
+    50%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
+}
+@keyframes todo3{
+    0%{
+        opacity: 1;
+    }
+    70%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
     }
 }

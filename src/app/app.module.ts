@@ -10,6 +10,7 @@ import { AboutComponent } from './about/about.component';
 import { ContactComponent } from './contact/contact.component';
 import { FooterComponent } from './footer/footer.component';
 import { ProjectsComponent } from './projects/projects.component';
+import { EyeActiveDirective } from './eye-active.directive';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { ProjectsComponent } from './projects/projects.component';
     AboutComponent,
     ContactComponent,
     FooterComponent,
-    ProjectsComponent
+    ProjectsComponent,
+    EyeActiveDirective
   ],
   imports: [
     BrowserModule,

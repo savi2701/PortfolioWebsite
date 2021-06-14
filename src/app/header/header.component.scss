@@ -36,6 +36,7 @@
     }
 }
 .eyes{
+    margin-left: -195px;
     .eye{
         position: relative;
         width: 35px;
@@ -76,6 +77,17 @@
         .eyelash{
             opacity: 1;
         }
+    }
+}
+.eyes.active{
+    .eye{
+        &::before{
+            height: 22px;
+            width: 22px;
+        }
+    }
+    .eyelash{
+        opacity: 1;
     }
 }
 
