@@ -2,7 +2,7 @@
 
 .container{
     max-width: 1600px;
-    margin: auto;
+    margin: auto auto 20rem;
     padding: 280px 140px 50px;
     @include flex-align-justify-between();
     position: relative;
@@ -126,5 +126,31 @@
     }
     100%{
         opacity: 1;
+    }
+}
+
+.projects{
+    max-width: 1600px;
+    margin: auto;
+    padding: 96px 140px;
+    color: white;
+    h1{
+        font-family: Bogart;
+        color: white;
+        font-size: 2rem;
+    }
+    p{
+        font-size: 1.25rem;
+    }
+    &__body{
+        @include flex-align-justify-center();
+        &>div{
+            span{
+                font-size: 1rem;
+            }
+            font-family: Bogart;
+            font-size: 2rem;
+            padding: 3rem;
+        }
     }
 }

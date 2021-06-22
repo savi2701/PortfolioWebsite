@@ -1,8 +1,7 @@
 @import "../../assets/mixins.scss";
 
 .header{
-    max-width: 1600px;
-    margin: auto;
+    padding: 0 96px;
     @include flex-align-justify-between();
     position: fixed;
     top: 0;
