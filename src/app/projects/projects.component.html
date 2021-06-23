@@ -1,6 +1,2 @@
 <app-header></app-header>
-<div class="container" *ngFor ="let project of projects" appEyeActive>
-    <p>{{project.type}}</p>
-    <h1>{{project.name}}</h1>
-    <img [src]="project.imgSrc" alt="Portfolio">
-</div>
+<app-project></app-project>

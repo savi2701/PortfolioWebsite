@@ -1,24 +1,28 @@
 <div class="header">
-    <ul>
-        <li class="link__projects"><a [routerLink]="['']" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" appEyeActive>Home</a></li>
-        <li><a [routerLink]="['/projects']" routerLinkActive="active" appEyeActive>Projects</a></li>
-        <li><a [routerLink]="['/about']" routerLinkActive="active" appEyeActive>About</a></li>
-        <li><a [routerLink]="['/contact']" routerLinkActive="active" appEyeActive>Contact me</a></li>
-    </ul>
-    <div class="eyes" id="googly-eyes">
-        <div class="eye" appMovingEyes></div>
-        <div class="eyelash"></div>
+    <div class="hamburger" (click)="showMwebNavbar = !showMwebNavbar">
+        <div class="line"></div>
+        <div class="line"></div>
+        <div class="line"></div>
     </div>
-    <ul>
-        <li appEyeActive>
-            <a href="https://www.linkedin.com/in/saavi-varshney-b0b111185/" target="_blank">
-                <img src="../../assets/images/linkedin (1).svg" alt="" class="icon-linkedln">
-            </a>
-        </li>
-    </ul>
-    
+    <nav [ngClass]="{'open': showMwebNavbar}">
+        <ul>
+            <li class="link__projects"><a [routerLink]="['']" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" appEyeActive>Home</a></li>
+            <li><a [routerLink]="['/projects']" routerLinkActive="active" appEyeActive>Projects</a></li>
+            <li><a [routerLink]="['/about']" routerLinkActive="active" appEyeActive>About</a></li>
+            <li><a [routerLink]="['/contact']" routerLinkActive="active" appEyeActive>Contact me</a></li>
+        </ul>
+        <div class="eyes" id="googly-eyes">
+            <div class="eye" appMovingEyes></div>
+            <div class="eyelash"></div>
+        </div>
+        <ul>
+            <li appEyeActive>
+                <a href="https://www.linkedin.com/in/saavi-varshney-b0b111185/" target="_blank">
+                    <img src="../../assets/images/linkedin (1).svg" alt="" class="icon-linkedln">
+                </a>
+            </li>
+        </ul>
+    </nav>
 </div>
-
-
 
 

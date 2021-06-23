@@ -1,6 +1,10 @@
 @import "../../assets/mixins.scss";
 
 .header{
+    position: relative;
+    height: 10vh;
+}
+nav{
     padding: 0 96px;
     @include flex-align-justify-between();
     position: fixed;
@@ -19,10 +23,10 @@
                 &:hover, &.active{
                     border-bottom: 4px solid #a162e8;
                 }
+                @media screen and (max-width: 768px){
+                    font-size: 1.5rem;
+                }
             }
-        }
-        .link__projects{
-            padding-left: 0;
         }
         .icon-linkedln{
             height: 40px; 
@@ -31,11 +35,37 @@
             border-radius: 50%; 
             border: none;
             margin-top: 10px;
+            @media screen and (max-width: 768px){
+                display: none;
+            }
+        }
+        @media screen and (max-width: 768px){
+            flex-direction: column;
+        }
+        @media screen and (min-width: 768px){
+            .link__projects{
+                padding-left: 0;
+            }   
+        }
+    }
+    @media screen and (max-width: 768px){
+        padding: 0;
+        height: 100vh;
+        justify-content: center;
+        clip-path: circle(100px at 90% -10%);
+        -webkit-clip-path: circle(100px at 90% -11%);
+        transition: all 1s ease-out;
+        &.open{
+            clip-path: circle(1200px at 90% -10%);
+            -webkit-clip-path: circle(1200px at 90% -11%);     
         }
     }
 }
 .eyes{
     margin-left: -195px;
+    @media screen and (max-width: 768px){
+        display: none;
+    }
     .eye{
         position: relative;
         width: 35px;
@@ -89,5 +119,30 @@
         opacity: 1;
     }
 }
-
+.hamburger{
+    display: none;
+    @media screen and (max-width: 768px){
+        @include flex-align-justify-center();
+        flex-direction: column;
+        z-index: 100;
+        position: fixed;
+        cursor: pointer;
+        right: 5%;
+        top: 5%;
+        transform: translate(-5%, -50%);
+        background: linear-gradient(to top left, #46207e 15%, #a162e8 100%);
+        border-radius: 50%;
+        height: 45px;
+        width: 45px;
+        .line{
+            width: 25px;
+            height: 3px;
+            background: white;
+            &:not(:last-child){
+                margin-bottom: 5px;
+            }
+        }
+    }
+}
+ 
 
