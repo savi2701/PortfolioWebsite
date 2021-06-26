@@ -15,4 +15,11 @@ export class HeaderComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  toggleMwebNavbar(){
+    this.showMwebNavbar = !this.showMwebNavbar;
+    const links = document.querySelectorAll('.nav-links li');
+    links.forEach(link =>{
+      link.classList.toggle("fade")
+    })
+  }
 }

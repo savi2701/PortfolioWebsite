@@ -5,73 +5,148 @@
     height: 10vh;
 }
 nav{
-    padding: 0 96px;
     @include flex-align-justify-between();
     position: fixed;
     top: 0;
     left: 0;
     right: 0;
-    background-color: black;
+    background-color: $black;
     z-index: 99;
     ul{
         @include flex-align-justify-center();
         li{
             padding: 1.5rem 2rem;
             a{
-                font-size: 1.2rem;
-                color: white;
+                font-size: 1.75rem;
+                color: $black;
+                font-weight: bolder;
                 &:hover, &.active{
-                    border-bottom: 4px solid #a162e8;
+                    border-bottom: 4px solid $purple;
+                    @media screen and (max-width: 1024px){
+                        border-bottom: 4px solid $pink;
+                    }
                 }
-                @media screen and (max-width: 768px){
-                    font-size: 1.5rem;
+                @media screen and (min-width: 1024px){
+                    font-size: 1.2rem;
+                    color: $white;
+                }
+            }
+            @media screen and (max-width: 1024px){
+                opacity: 0;
+                &:nth-child(1){
+                    transition: all 0.5s ease 0.2s;
+                }
+                &:nth-child(2){
+                    transition: all 0.5s ease 0.4s
+                }
+                &:nth-child(3){
+                    transition: all 0.5s ease 0.5s
+                }
+                &:nth-child(4){
+                    transition: all 0.5s ease 0.6s
+                }
+                &.fade{
+                     opacity: 1;
                 }
             }
         }
-        .icon-linkedln{
-            height: 40px; 
-            width: 40px; 
-            background-color: white; 
-            border-radius: 50%; 
-            border: none;
-            margin-top: 10px;
-            @media screen and (max-width: 768px){
-                display: none;
+        &.icon{
+            display: none;
+            img{
+                background-color: $white; 
+                border-radius: 50%; 
+                border: none;
+                margin-top: 10px;
+            }
+            @media screen and (min-width: 1024px){
+                display: inline-block;
             }
         }
-        @media screen and (max-width: 768px){
+        @media screen and (max-width: 1024px){
             flex-direction: column;
         }
-        @media screen and (min-width: 768px){
+        @media screen and (min-width: 1024px){
             .link__projects{
                 padding-left: 0;
             }   
         }
     }
-    @media screen and (max-width: 768px){
+    @media screen and (max-width: 1024px){
         padding: 0;
         height: 100vh;
         justify-content: center;
         clip-path: circle(100px at 90% -10%);
         -webkit-clip-path: circle(100px at 90% -11%);
         transition: all 1s ease-out;
+        pointer-events: none;
         &.open{
-            clip-path: circle(1200px at 90% -10%);
-            -webkit-clip-path: circle(1200px at 90% -11%);     
+            clip-path: circle(2000px at 90% -10%);
+            -webkit-clip-path: circle(2000px at 90% -11%);
+            background: $purple;  
+            pointer-events: all;   
         }
     }
+    @media screen and (min-width: 1024px){
+        padding: 0 96px;
+    }
 }
+
+.hamburger{
+    @include flex-align-justify-center();
+    flex-direction: column;
+    z-index: 100;
+    position: fixed;
+    cursor: pointer;
+    right: 5%;
+    top: 5%;
+    transform: translate(-5%, -50%);
+    height: 45px;
+    width: 45px;
+    .line{
+        width: 25px;
+        height: 3px;
+        background: $white;
+        transition: 0.3s ease;
+        &:nth-child(1){
+            transform: translateY(-4px);
+        }
+        &:nth-child(3){
+            transform: translateY(4px);
+        }
+    }
+    &.change{
+        .line{
+            background: $pink;
+            &:nth-child(1){
+                transform: translateY(4px) rotateZ(-45deg);
+            }
+            &:nth-child(3){
+                transform: translateY(-2px) rotateZ(45deg);
+            }
+            &:nth-child(2){
+                opacity: 0;
+            }
+        }
+    }
+    @media screen and (min-width: 1024px){
+        display: none;
+    }
+    
+}
+
+// googly eyes only for web
 .eyes{
     margin-left: -195px;
-    @media screen and (max-width: 768px){
-        display: none;
+    display: none;
+    @media screen and (min-width: 1024px){
+        display: block;
     }
     .eye{
         position: relative;
         width: 35px;
         height: 35px;
         display: block;
-        background: white;
+        background: $white;
         margin: 0 15px;
         border-radius:50% ;
         &::before{
@@ -82,7 +157,7 @@ nav{
             transform: translate(-50%, -50%);
             width: 15px;
             height: 15px;
-            background: black;
+            background: $black;
             border-radius: 50%;
         }
         &:hover{
@@ -107,40 +182,15 @@ nav{
             opacity: 1;
         }
     }
-}
-.eyes.active{
-    .eye{
-        &::before{
-            height: 22px;
-            width: 22px;
-        }
-    }
-    .eyelash{
-        opacity: 1;
-    }
-}
-.hamburger{
-    display: none;
-    @media screen and (max-width: 768px){
-        @include flex-align-justify-center();
-        flex-direction: column;
-        z-index: 100;
-        position: fixed;
-        cursor: pointer;
-        right: 5%;
-        top: 5%;
-        transform: translate(-5%, -50%);
-        background: linear-gradient(to top left, #46207e 15%, #a162e8 100%);
-        border-radius: 50%;
-        height: 45px;
-        width: 45px;
-        .line{
-            width: 25px;
-            height: 3px;
-            background: white;
-            &:not(:last-child){
-                margin-bottom: 5px;
+    &.active{
+        .eye{
+            &::before{
+                height: 22px;
+                width: 22px;
             }
+        }
+        .eyelash{
+            opacity: 1;
         }
     }
 }

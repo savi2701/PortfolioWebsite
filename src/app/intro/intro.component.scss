@@ -1,11 +1,16 @@
 @import "../../assets/mixins.scss";
 
 .container{
-    max-width: 1600px;
-    margin: auto auto 20rem;
-    padding: 280px 140px 50px;
     @include flex-align-justify-between();
     position: relative;
+    @media screen and (min-width: 768px){
+        max-width: 1600px;
+        margin: auto auto 20rem;
+        padding: 280px 140px 50px;
+    }
+    @media screen and (max-width: 768px){
+        flex-direction: column;
+    }
     .heading{
         font-family: Bogart;
         font-size: 6.5rem;
@@ -13,6 +18,12 @@
         background-clip: text;
         -webkit-text-fill-color: transparent;
         line-height: 1;
+        @media screen and (max-width: 768px){
+            font-size: 5rem;
+        }
+        @media screen and (max-width: 1200px){
+            font-size: 5rem;;
+        }
     }
     .subheading{
         margin-top: 1.5rem;
@@ -25,6 +36,10 @@
         border-radius: 20px;
         padding: 2rem;
         position: relative;
+        transition: all 1s cubic-bezier(.175,.885,.32,1.275);
+        @media screen and (max-width: 1200px){
+            transform: scale3d(.8,.8,.8);
+        }
     }
     .color{
         position: absolute;
@@ -32,7 +47,13 @@
         height: 135px;
         border-radius: 20px;
         z-index: 2;
-        transition: all .3s cubic-bezier(.175,.885,.32,1.275);
+        transition: all 1s cubic-bezier(.175,.885,.32,1.275);
+        @media screen and (max-width: 992px){
+            display: none;
+        }
+        @media screen and (max-width: 1200px){
+            transform: scale3d(.8,.8,.8);
+        }
     }
     .one{
         background: linear-gradient(180deg,#edca85,#f093b0);

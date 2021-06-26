@@ -1,0 +1,72 @@
+h2{
+    color: white;
+}
+.contact-form{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+}
+.contact{
+    max-width: 1600px;
+    margin: auto;
+    padding: 140px;
+    color: white;
+    h1{
+        color: white;
+        text-align: center;
+    }
+    &-form{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        &__body{
+            width: 400px;
+            form>div{
+                position: relative;
+            }
+            label{
+                position: absolute;
+                top: 10px;
+                pointer-events: none;
+                left: 0;
+                transition: .5s;
+
+            }
+            input{
+                padding: 10px 0;
+                margin-bottom: 30px;
+            }
+            textarea{
+                height: 80px;
+                padding: 10px 0;
+                margin-bottom: 20px;
+            }
+            input, textarea{
+                width: 100%;
+                box-shadow: none;
+                outline: none;
+                border: none;
+                border-bottom: 2px solid white;
+                background-color: black;
+                color: white;
+                &:focus, &:valid{
+                    border-bottom-color: yellow;
+                    & ~label{
+                        top: -12px;
+                        left: 0;
+                        color: yellow;
+                        font-size: 12px;
+                        font-weight: bold;
+                    } 
+                }
+            }
+            button{
+                width: 100%;
+                outline: none;
+                border: none;
+                cursor: pointer;
+            }
+        }
+    }
+}

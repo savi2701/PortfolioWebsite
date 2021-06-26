@@ -1,11 +1,11 @@
 <div class="header">
-    <div class="hamburger" (click)="showMwebNavbar = !showMwebNavbar">
+    <div class="hamburger" (click)="toggleMwebNavbar()" [ngClass]="{'change': showMwebNavbar}">
         <div class="line"></div>
         <div class="line"></div>
         <div class="line"></div>
     </div>
     <nav [ngClass]="{'open': showMwebNavbar}">
-        <ul>
+        <ul class="nav-links" (click)="toggleMwebNavbar()">
             <li class="link__projects"><a [routerLink]="['']" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" appEyeActive>Home</a></li>
             <li><a [routerLink]="['/projects']" routerLinkActive="active" appEyeActive>Projects</a></li>
             <li><a [routerLink]="['/about']" routerLinkActive="active" appEyeActive>About</a></li>
@@ -15,10 +15,10 @@
             <div class="eye" appMovingEyes></div>
             <div class="eyelash"></div>
         </div>
-        <ul>
+        <ul class="icon">
             <li appEyeActive>
                 <a href="https://www.linkedin.com/in/saavi-varshney-b0b111185/" target="_blank">
-                    <img src="../../assets/images/linkedin (1).svg" alt="" class="icon-linkedln">
+                    <img src="../../assets/images/linkedin.svg" alt="linkedin" height="40px" width="40px">
                 </a>
             </li>
         </ul>
