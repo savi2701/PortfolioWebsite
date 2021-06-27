@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-
+import { Router } from '@angular/router';
+import { ProjectsService } from '../projects.service';
+import { Project } from "../project.modal";
 @Component({
   selector: 'app-project',
   templateUrl: './project.component.html',
@@ -7,31 +9,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ProjectComponent implements OnInit {
 
-  projects = [
-    {
-      type : "Website",
-      name : "Portfolio Website",
-      imgSrc : "../../assets/images/Portfolio.png"
-    },
-    {
-      type: "Web App",
-      name: "Cowin Solution",
-      imgSrc : "../../assets/images/cowin.png"
-    },
-    {
-      type: "Web App",
-      name: "URL Shortening App",
-      imgSrc: "../../assets/images/Portfolio.png"
-    },
-    {
-      type: "Website",
-      name: "Mario Kart Google Maps",
-      imgSrc: "../../assets/images/Portfolio.png"
-    }
-  ]
-  constructor() { }
+  constructor(private router: Router, private projectsService: ProjectsService) { }
+  projects: Project[] = [];
 
   ngOnInit(): void {
+    this.projects = this.projectsService.getProjects();
+  }
+
+  openProject(id: number){
+    console.log(id);
+    this.router.navigate(['/projects/' + id]);
   }
 
 }

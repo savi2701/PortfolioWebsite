@@ -2,12 +2,18 @@ $black: #000;
 $white: #fff;
 $purple: #a162e8;
 $pink: #ffc4ff;
-
+$grey: #222;
 .container{
     max-width: 1400px;
     margin: auto auto 5rem;
     @media screen and (max-width: 1024px){
         margin: 2rem;
+    }
+}
+.wrapper{
+    margin: 48px 96px;
+    @media screen and (max-width: 1024px){
+        margin: 2rem
     }
 }
 @mixin flex-align-justify-center{

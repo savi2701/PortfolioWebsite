@@ -1,5 +1,7 @@
-<div class="container" *ngFor ="let project of projects" appEyeActive>
+<div class="wrapper" *ngFor ="let project of projects" appEyeActive (click)="openProject(project.id)">
     <p>{{project.type}}</p>
     <h1>{{project.name}}</h1>
-    <img [src]="project.imgSrc" alt="Portfolio">
+    <div class="img-holder">
+        <img [src]="project.imgSrc" alt="Portfolio">
+    </div>
 </div>

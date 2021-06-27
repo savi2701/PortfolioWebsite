@@ -12,6 +12,7 @@ import { FooterComponent } from './footer/footer.component';
 import { ProjectsComponent } from './projects/projects.component';
 import { EyeActiveDirective } from './eye-active.directive';
 import { ProjectComponent } from './projects/project/project.component';
+import { ProjectDetailComponent } from './projects/project-detail/project-detail.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { ProjectComponent } from './projects/project/project.component';
     FooterComponent,
     ProjectsComponent,
     EyeActiveDirective,
-    ProjectComponent
+    ProjectComponent,
+    ProjectDetailComponent
   ],
   imports: [
     BrowserModule,
