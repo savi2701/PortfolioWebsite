@@ -1,6 +1,5 @@
-h2{
-    color: white;
-}
+@import "../../assets/mixins.scss";
+
 .contact-form{
     display: flex;
     align-items: center;
@@ -8,22 +7,17 @@ h2{
 
 }
 .contact{
-    max-width: 1600px;
-    margin: auto;
-    padding: 140px;
-    color: white;
-    h1{
-        color: white;
-        text-align: center;
-    }
+   color: $white;
     &-form{
         display: flex;
         align-items: center;
         justify-content: space-between;
         &__body{
-            width: 400px;
+            width: 700px;
             form>div{
+                width: 100%;
                 position: relative;
+                margin-bottom: 30px;
             }
             label{
                 position: absolute;
@@ -35,7 +29,21 @@ h2{
             }
             input{
                 padding: 10px 0;
-                margin-bottom: 30px;
+            }
+            .underline{
+                position: absolute;
+                bottom: 0;
+                height: 2px;
+                width: 100%;
+                &:before{
+                    position: absolute;
+                    content: "";
+                    height: 100%;
+                    width: 100%;
+                    background: red;
+                    transform: scaleX(0);
+                    transition: transform 0.3s ease;
+                }
             }
             textarea{
                 height: 80px;
@@ -44,20 +52,21 @@ h2{
             }
             input, textarea{
                 width: 100%;
-                box-shadow: none;
                 outline: none;
                 border: none;
                 border-bottom: 2px solid white;
                 background-color: black;
                 color: white;
                 &:focus, &:valid{
-                    border-bottom-color: yellow;
-                    & ~label{
+                   & ~label{
                         top: -12px;
                         left: 0;
                         color: yellow;
                         font-size: 12px;
                         font-weight: bold;
+                    }
+                    & ~ .underline::before{
+                        transform: scaleX(1);
                     } 
                 }
             }
@@ -68,5 +77,16 @@ h2{
                 cursor: pointer;
             }
         }
+    }
+}
+#envelope{
+    animation: envelope 1s ease-in-out infinite alternate;
+}
+@keyframes envelope{
+    from{
+        transform: translateY(-15px);
+    }
+    to{
+        transform: translateY(15px);
     }
 }

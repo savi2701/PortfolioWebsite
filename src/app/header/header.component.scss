@@ -2,7 +2,10 @@
 
 .header{
     position: relative;
-    height: 10vh;
+    height: 22vh;
+    @media screen and (max-width: 1024px){
+        height: 10vh;
+    }
 }
 nav{
     @include flex-align-justify-between();
@@ -15,7 +18,7 @@ nav{
     ul{
         @include flex-align-justify-center();
         li{
-            padding: 1.5rem 2rem;
+            padding: 0.75rem 2rem;
             a{
                 font-size: 1.75rem;
                 color: $black;
@@ -92,45 +95,58 @@ nav{
 }
 
 .hamburger{
-    @include flex-align-justify-center();
-    flex-direction: column;
-    z-index: 100;
     position: fixed;
-    cursor: pointer;
-    right: 5%;
-    top: 5%;
-    transform: translate(-5%, -50%);
-    height: 45px;
-    width: 45px;
-    .line{
-        width: 25px;
-        height: 3px;
-        background: $white;
-        transition: 0.3s ease;
-        &:nth-child(1){
-            transform: translateY(-4px);
-        }
-        &:nth-child(3){
-            transform: translateY(4px);
+    top: 0;
+    background: $black;
+    height: 10vh;
+    width: 100%;
+    z-index: 100;
+
+    &-icon{
+        @include flex-align-justify-center();
+        flex-direction: column;
+        z-index: 100;
+        position: fixed;
+        cursor: pointer;
+        right: 5%;
+        top: 5%;
+        transform: translate(-5%, -50%);
+        height: 45px;
+        width: 45px;
+        .line{
+            width: 25px;
+            height: 3px;
+            background: $white;
+            transition: 0.3s ease;
+            &:nth-child(1){
+                transform: translateY(-4px);
+            }
+            &:nth-child(3){
+                transform: translateY(4px);
+            }
         }
     }
     &.change{
-        .line{
-            background: $pink;
-            &:nth-child(1){
-                transform: translateY(4px) rotateZ(-45deg);
-            }
-            &:nth-child(3){
-                transform: translateY(-2px) rotateZ(45deg);
-            }
-            &:nth-child(2){
-                opacity: 0;
+        .hamburger-icon{
+            .line{
+                background: $pink;
+                &:nth-child(1){
+                    transform: translateY(4px) rotateZ(-45deg);
+                }
+                &:nth-child(3){
+                    transform: translateY(-2px) rotateZ(45deg);
+                }
+                &:nth-child(2){
+                    opacity: 0;
+                }
             }
         }
-    }
+        background-color: $purple;
+    } 
     @media screen and (min-width: 1024px){
         display: none;
     }
+    
     
 }
 
@@ -172,7 +188,7 @@ nav{
         background: url("../../assets/images/lash-white.svg") no-repeat;
         height: 15px;
         width: 40px;
-        top: 27px;
+        top: 18px;
         margin-left: 25px;
         opacity: 0;
         transform: scale(1.5);

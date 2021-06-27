@@ -3,6 +3,13 @@ $white: #fff;
 $purple: #a162e8;
 $pink: #ffc4ff;
 
+.container{
+    max-width: 1400px;
+    margin: auto auto 5rem;
+    @media screen and (max-width: 1024px){
+        margin: 2rem;
+    }
+}
 @mixin flex-align-justify-center{
     display: flex;
     align-items: center;

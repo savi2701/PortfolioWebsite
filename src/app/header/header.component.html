@@ -1,8 +1,10 @@
 <div class="header">
-    <div class="hamburger" (click)="toggleMwebNavbar()" [ngClass]="{'change': showMwebNavbar}">
-        <div class="line"></div>
-        <div class="line"></div>
-        <div class="line"></div>
+    <div class="hamburger" [ngClass]="{'change': showMwebNavbar}">
+        <div class="hamburger-icon" (click)="toggleMwebNavbar()">
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+        </div>
     </div>
     <nav [ngClass]="{'open': showMwebNavbar}">
         <ul class="nav-links" (click)="toggleMwebNavbar()">
