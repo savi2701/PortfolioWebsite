@@ -1,6 +1,6 @@
 @import "../../assets/mixins.scss";
 
-.contact-form{
+/* .contact-form{
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -136,5 +136,30 @@
     }
     to{
         transform: translateY(15px);
+    }
+} */
+
+.contact{
+    h1{
+        @include coloured-text();
+        font-size: 4rem;
+        text-align: center;
+    }
+    p{
+        color: $white;
+        font-size: 1.25rem;
+        margin-bottom: 2rem;
+        text-align: center;
+    }
+    &-body{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    &-form{
+
+    }
+    &-maps{
+
     }
 }

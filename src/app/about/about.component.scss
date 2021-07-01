@@ -1,9 +1,6 @@
 @import "../../assets/mixins.scss";
 
-.container{
-    max-width: 1600px;
-    margin: auto;
-    padding: 200px 140px 50px;
+.intro{
     @include flex-align-justify-center();
     align-items: flex-start;
     img{
@@ -11,12 +8,10 @@
         margin-right: 15rem;
     }
     &__text{
-        color: white;
+        color: $white;
         flex: 1;
         text-align: justify;
         .heading{
-            font-family: Bogart;
-            font-size: 2rem;
             margin-bottom: 2rem;
         }
         .subheading{
@@ -27,16 +22,13 @@
         }
     }
 }
-
+.heading{
+    font-family: Bogart;
+    font-size: 2rem;
+    color: $white;
+}
 .history{
-    max-width: 1600px;
-    margin: auto;
-    color: white;
-    padding: 96px 140px;
-    .heading{
-        font-family: Bogart;
-        font-size: 2rem;
-    }
+    color: $white;
     &-body{
         @include flex-align-justify-center();
         align-items: flex-end;
@@ -49,7 +41,7 @@
         padding: 4rem 0 4rem 4rem;
         .cell{
             background-color: #222;
-            color: white;
+            color: $white;
             font-size: 1.25rem;
             align-items: flex-start;
             width: 350px;
@@ -94,6 +86,18 @@
             }
         }
     } 
+}
+
+.skills{
+    &-body{
+        @include flex-align-justify-between();
+        &__content{
+            color: $white;
+        }
+        &__rotation{
+            
+        }
+    }
 }
 
 #hair{

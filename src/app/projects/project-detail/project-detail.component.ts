@@ -21,12 +21,27 @@ export class ProjectDetailComponent implements OnInit {
       
     },
     {
-      heading: "Portfolio Website2",
-      subheading: "My portfolio website to showcase my work and skills.",
+      heading: "Cowin Solution",
+      subheading: "An app to locate all the nearby vaccination centers.",
       aim : {
-        heading: "The aim was to create a portfolio website from scratch, without the use of any external library like Bootstrap or Tailwind. The entire project is created using Angular, HTML and SCSS. All the illustrations are used from undraw.co.",
-        subheading: "The design inspiration was taken from the portfolio website of Sean Halpin."
-      
+        heading: "The aim of the website was to create a quick solution to find covid vaccination centers. One can filter their location by pincode or district.",
+        subheading: "The website used arogya setu api as provided by the government of india."
+      }
+    },
+    {
+      heading: "URL Shortening App",
+      subheading: "An app to locate all the nearby vaccination centers.",
+      aim : {
+        heading: "The aim of the website was to create a quick solution to find covid vaccination centers. One can filter their location by pincode or district.",
+        subheading: "The website used arogya setu api as provided by the government of india."
+      }
+    },
+    {
+      heading: "Mario Kart Google Maps",
+      subheading: "An app to locate all the nearby vaccination centers.",
+      aim : {
+        heading: "The aim of the website was to create a quick solution to find covid vaccination centers. One can filter their location by pincode or district.",
+        subheading: "The website used arogya setu api as provided by the government of india."
       }
     }
   ]
