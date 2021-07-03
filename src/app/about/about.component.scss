@@ -93,9 +93,16 @@
         @include flex-align-justify-between();
         &__content{
             color: $white;
+            flex: 1;
+            font-size: 1.25rem;
+            padding-bottom: 8rem;
+            .heading{
+                margin-bottom: 2rem;
+            }
         }
         &__rotation{
-            
+            flex: 1;
+            text-align: end;
         }
     }
 }
