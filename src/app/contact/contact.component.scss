@@ -1,149 +1,24 @@
 @import "../../assets/mixins.scss";
 
-/* .contact-form{
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-
-}
 .contact{
-   color: $white;
-    &-form{
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        &__body{
-            width: 700px;
-            form>div{
-                width: 100%;
-                position: relative;
-                margin-bottom: 30px;
-            }
-            .text-area{
-                height: 80px;
-            }
-            label{
-                position: absolute;
-                top: 10px;
-                pointer-events: none;
-                left: 0;
-                transition: .5s;
-            }
-            input{
-                padding-top: 10px;
-                font-size: 1.25rem;
-            }
-            .underline{
-                position: absolute;
-                bottom: 0;
-                height: 2px;
-                width: 100%;
-                &:before{
-                    position: absolute;
-                    content: "";
-                    height: 100%;
-                    width: 100%;
-                    background: $purple;
-                    transform: scaleX(0);
-                    transition: transform 0.3s ease;
-                }
-            }
-            textarea{
-                height: 100%;
-                padding-top: 10px;
-                font-size: 1.25rem;
-                &:focus, &:valid{
-                    &~label{
-                        top: -15px;
-                    }
-                }
-            }
-            input, textarea{
-                width: 100%;
-                outline: none;
-                border: none;
-                border-bottom: 2px solid $white;
-                background-color: $black;
-                color: $white;
-                &:focus, &:valid{
-                   & ~label{
-                        top: -12px;
-                        left: 0;
-                        color: $purple;
-                        font-size: 1rem;
-                        font-weight: bold;
-                    }
-                    & ~ .underline::before{
-                        transform: scaleX(1);
-                    } 
-                }
-            }
-            button{
-                line-height: 50px;
-                height: 50px;
-                text-align: center;
-                width: 250px;
-                cursor: pointer;
-                color: $white;
-                transition: all 0.5s;
-                position: relative;
-                background-color: $purple;
-                border: none;
-                &::before{
-                    content: '';
-                    position: absolute;
-                    top: 0;
-                    left: 0;
-                    width: 100%;
-                    height: 100%;
-                    z-index: 1;
-                    background-color: rgba(255,255,255,0.1);
-                    transition: all 0.3s;
-                }
-                &::after{
-                    content: '';
-                    position: absolute;
-                    top: 0;
-                    left: 0;
-                    width: 100%;
-                    height: 100%;
-                    z-index: 1;
-                    opacity: 0;
-                    transition: all 0.3s;
-                    border: 3px solid $purple;
-                    transform: scale(1.2,1.2);
-                }
-                &:hover{
-                    &::before{
-                        opacity: 0 ;
-                        transform: scale(0.5,0.5);
-                    }
-                    &::after{
-                        opacity: 1;
-                        transform: scale(1,1);
-                    }
-                }
-            }
+    a{
+        color: $white;
+        font-size: 1.25rem;
+        line-height: 1.2;
+        position: relative;
+        transition: all 0.5s ease-in;
+        &::before{
+            position: absolute;
+            content: '';
+            height: 4px;
+            width: 100%;
+            background-color: $purple;
+            bottom: 0;
         }
-    }
-}
-#envelope{
-    animation: envelope 1s ease-in-out infinite alternate;
-}
-@keyframes envelope{
-    from{
-        transform: translateY(-15px);
-    }
-    to{
-        transform: translateY(15px);
-    }
-} */
-
-.contact{
-    h1{
-        @include coloured-text();
-        font-size: 4rem;
-        text-align: center;
+        &:hover::before{
+            bottom: 5px;
+            height: 7px;
+        }
     }
     p{
         color: $white;
@@ -152,14 +27,152 @@
         text-align: center;
     }
     &-body{
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
+        @include flex-align-justify-between();
+        margin-top: 5rem;
+        @media screen and (max-width:1400px){
+            flex-direction: column;
+        }
     }
     &-form{
-
+        margin-left: 96px;
+        flex: 1;
+        margin-right: 3rem;
+        @media screen and (max-width:1400px) and (min-width: 786px){
+            padding: 2rem;
+            width: 100%;
+            margin: 0;
+        }
+        @media screen and (max-width:786px){
+            padding: 1rem;
+            margin: 0;
+        }
+        .form{
+            &-line{
+                display: flex;
+                >div:nth-child(1){
+                    margin-right: 0.75rem;
+                }
+            }
+            &-group{
+                width: 100%;
+                position: relative;
+                input{
+                    height: 50px;
+                    margin-bottom: 0.75rem;
+                    padding: 10px 20px;
+                    line-height: 50px;
+                }
+                textarea{
+                    padding: 10px 20px;
+                    resize: none;
+                }
+                input,textarea{
+                    width: 100%;
+                    background: $grey;
+                    outline: none;
+                    border: none;
+                    font-size: 1.25rem;
+                    color: #8d8d8d;
+                    &:focus{
+                        & ~ .underline::before{
+                            transform: scaleX(1);
+                        } 
+                    }
+                    &.ng-touched.ng-invalid{
+                        & ~ .underline{
+                            background-color: red;
+                        }
+                    }
+                }
+            }
+        }
     }
     &-maps{
-
+        flex: 1;
+        position: relative;
+        width: 95%;
+        @media screen and (max-width: 786px){
+            padding: 1rem;
+        }
+    }
+}
+#mapid { 
+    height: 440px; 
+    
+}
+.button{
+    margin-top: 1rem;
+    color: $purple;
+    position: relative;
+    background: transparent;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    height: 50px;
+    width: 40%;
+    font-size: 1.25rem;
+    line-height: 1.25;
+    display: block;
+    margin-left: auto;
+    &::after,&::before{
+        content: "";
+        display: block;
+        position: absolute;
+        width: 40%;
+        height: 40%;
+        border: 2px solid;
+        transition: all 0.6s ease;
+        border-radius: 2px;
+    }
+    &::after{
+        bottom: 0;
+        right: 0;
+        border-top-color: transparent;
+        border-left-color: transparent;
+        border-bottom-color: $purple;
+        border-right-color: $purple;
+    }
+    &::before{
+        top: 0;
+        left: 0;
+        border-bottom-color: transparent;
+        border-right-color: transparent;
+        border-top-color: $purple;
+        border-left-color: $purple;
+    }
+    &:hover{
+        &::before,&::after{
+            width: 100%;
+            height: 100%;
+        }
+    }
+}
+.underline{
+    position: absolute;
+    bottom: 0.75rem;
+    height: 2px;
+    width: 100%;
+    &::before{
+        position: absolute;
+        content: "";
+        height: 100%;
+        width: 100%;
+        background: $purple;
+        transform: scaleX(0);
+        transition: transform 0.3s ease;
+    }
+}
+.info{
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    line-height: 1.5;
+    color: rgba(160, 233, 255, 1);
+    background-color: $black;
+    z-index: 10001;
+    padding: 10px;
+    width: 230px;
+    span{
+        color: $purple;
     }
 }

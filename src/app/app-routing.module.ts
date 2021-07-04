@@ -10,7 +10,6 @@ const routes: Routes = [
   {path: '', component: IntroComponent},
   {path: 'about', component: AboutComponent},
   {path: 'contact', component: ContactComponent},
-  {path: 'projects', component: ProjectsComponent},
   {path: 'projects/:id', component: ProjectDetailComponent}
 ];
 

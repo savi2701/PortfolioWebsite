@@ -31,6 +31,8 @@ export class AboutComponent implements OnInit {
             {label: 'Gulp'},
             {label: 'C++'},
             {label: 'SQL'},
+            {label: 'Figma'},
+            {label: 'AdobeXD'},
         ];
 
         var settings = {

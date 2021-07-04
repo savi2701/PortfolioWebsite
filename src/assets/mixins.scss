@@ -44,3 +44,12 @@ $grey: #222;
     background-clip: text;
     -webkit-text-fill-color: transparent;
 }
+
+.main-heading{
+    @include coloured-text();
+    font-size: 4rem;
+    text-align: center;
+    @media screen and (max-width: 786px){
+        font-size: 3rem;
+    }
+}
