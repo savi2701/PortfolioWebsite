@@ -1,7 +1,17 @@
-<div class="wrapper" *ngFor ="let project of projects" appEyeActive (click)="openProject(project.id)">
+<!-- <div class="wrapper" *ngFor ="let project of projects" appEyeActive (click)="openProject(project.id)">
     <p>{{project.type}}</p>
     <h1>{{project.name}}</h1>
     <div class="img-holder">
         <img [src]="project.imgSrc" alt="Portfolio">
+    </div>
+</div> -->
+
+<div class="container project-container">
+    <div class="project" *ngFor="let project of projects">
+        <div class="project-header" style="background: url({{project.img}}) no-repeat; background-size: contain;"></div>
+        <div class="project-body">
+            <h3>{{project.heading}}</h3>
+            <p>{{project.subheading}}</p>
+        </div>
     </div>
 </div>

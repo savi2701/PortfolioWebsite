@@ -6,28 +6,28 @@ export class ProjectsService {
     private projects = [
         {
           id: 1,
-          type : "Website",
-          name : "Portfolio Website",
-          imgSrc : "../../assets/images/Portfolio.png"
+          heading : "Designing and Developing my Portfolio Website",
+          subheading: "The journey of designing and developing my first main project using Angular.",
+          img : "../../../assets/images/portfolio2.png"
         },
         {
-          id: 2,
-          type: "Web App",
-          name: "Cowin Solution",
-          imgSrc : "../../assets/images/cowin.png"
+          id: 1,
+          heading : "A quick app to find covid vaccine slots.",
+          subheading: "A small app created to track cowin vaccine centers, using the Aarogya Setu API.",
+          img : "../../../assets/images/covid.png"
         },
         {
-          id: 3,
-          type: "Web App",
-          name: "URL Shortening App",
-          imgSrc: "../../assets/images/Portfolio.png"
+          id: 1,
+          heading : "Designing and Developing my Portfolio Website",
+          subheading: "The journey of designing and developing my first main project using Angular.",
+          img : "../../../assets/images/portfolio2.png"
         },
         {
-          id: 4,
-          type: "Website",
-          name: "Mario Kart Google Maps",
-          imgSrc: "../../assets/images/Portfolio.png"
-        }
+          id: 1,
+          heading : "Designing and Developing my Portfolio Website",
+          subheading: "The journey of designing and developing my first main project using Angular.",
+          img : "../../../assets/images/portfolio2.png"
+        },
     ];
 
     getProjects(){

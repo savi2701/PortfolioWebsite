@@ -13,6 +13,7 @@ import { EyeActiveDirective } from './eye-active.directive';
 import { ProjectComponent } from './projects/project/project.component';
 import { ProjectDetailComponent } from './projects/project-detail/project-detail.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
   declarations: [
