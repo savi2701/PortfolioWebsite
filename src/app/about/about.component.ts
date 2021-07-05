@@ -41,7 +41,6 @@ export class AboutComponent implements OnInit {
             height: 600,
             radius: '75%',
             radiusMin: 95,
-            bgColor: '#000',
             borderRadius: '10',
             opacityOver: 1.00,
             opacityOut: 0.3,

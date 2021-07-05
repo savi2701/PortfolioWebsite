@@ -29,9 +29,9 @@ export class ContactComponent implements OnInit {
 
     this.msgForm = new FormGroup({
       'name': new FormControl(null),
-      'email': new FormControl(null, [Validators.required, Validators.email]),
+      'email': new FormControl(null, {validators: [Validators.required, Validators.email], updateOn: 'submit' }),
       'subject': new FormControl(null),
-      'message': new FormControl(null, Validators.required),
+      'message': new FormControl(null,{validators: [Validators.required], updateOn: 'submit' }),
     })
   }
 

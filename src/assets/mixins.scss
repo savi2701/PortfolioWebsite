@@ -53,3 +53,22 @@ $grey: #222;
         font-size: 3rem;
     }
 }
+.highlighted-anchor{
+    color: $white;
+    font-size: 1.25rem;
+    line-height: 1.2;
+    position: relative;
+    transition: all 0.5s ease-in;
+    &::before{
+        position: absolute;
+        content: '';
+        height: 4px;
+        width: 100%;
+        background-color: $purple;
+        bottom: 0;
+    }
+    &:hover::before{
+        bottom: 5px;
+        height: 7px;
+    }
+}

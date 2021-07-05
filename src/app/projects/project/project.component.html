@@ -7,7 +7,7 @@
 </div> -->
 
 <div class="container project-container">
-    <div class="project" *ngFor="let project of projects">
+    <div class="project" *ngFor="let project of projects" appEyeActive (click)="openProject(project.id)">
         <div class="project-header" style="background: url({{project.img}}) no-repeat; background-size: contain;"></div>
         <div class="project-body">
             <h3>{{project.heading}}</h3>
