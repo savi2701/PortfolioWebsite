@@ -1,0 +1,206 @@
+@import "../../assets/mixins.scss";
+
+//breakpoint1- 1600px
+//breakpoint2 -1400px
+//breakpoint3 - 1200px 
+//mweb-mode 1024px
+.container{
+    @include flex-align-justify-between();
+    position: relative;
+    @media screen and (min-width: 1600px){
+        margin-top: 9rem;
+        margin-bottom: 21rem;
+    }
+    @media screen and (max-width: 1024px){
+        flex-direction: column;
+    }
+    &-text{
+        margin-right: 10rem;
+        @media screen and (max-width: 1400px) and (min-width: 1200px){
+            margin-right: 5rem;
+        }
+        @media screen and (max-width: 1200px) and (min-width: 1024px){
+            margin-right: 4rem;
+        }
+        @media screen and (max-width: 1024px) {
+            margin-right: 0;
+        }
+    }
+    .heading{
+        font-family: Bogart-med;
+        font-size: 6.5rem;
+        background-image: linear-gradient(271deg,#a0e9ff 30%,#a162e8 50%,#f093b0 70%,#edca85 94%);
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+        line-height: 1.1;
+        @media screen and (max-width: 1400px){
+            font-size: 4rem;
+        }
+        @media screen and (max-width: 1600px) and (min-width: 1400px){
+            font-size: 5.75rem;
+        }
+        @media screen and (max-width: 1400px) and (min-width: 1200px){
+            font-size: 5rem;
+        }
+        @media screen and (max-width: 1200px) and (min-width: 1024px){
+            font-size: 4.5rem;
+            line-height: 1;
+        }
+        @media screen and (max-width: 1024px){
+            line-height: 1;
+            font-size: 3rem;
+        }
+        
+    }
+    .subheading{
+        margin-top: 2.5rem;
+        line-height: 1.4;
+        font-size: 1.5rem;
+        color: $white;
+        @media screen and (max-width: 1600px){
+            font-size: 1.25rem;
+        }
+        @media screen and (max-width: 1024px){
+            margin-bottom: -2rem;
+        }
+    }
+    &-img{
+        background-color: #222;
+        border-radius: 20px;
+        padding: 2rem;
+        position: relative;
+        transition: all 1s cubic-bezier(.175,.885,.32,1.275);
+        @media screen and (max-width: 1600px) and (min-width: 1024px){
+            transform: scale3d(.8,.8,.8);
+        }
+        @media screen and (max-width: 1024px){
+            transform: scale3d(.7,.7,.7);
+        }
+    }
+    .color{
+        position: absolute;
+        width: 135px;
+        height: 135px;
+        border-radius: 20px;
+        z-index: 2;
+        transition: all 1s cubic-bezier(.175,.885,.32,1.275);
+        @media screen and (max-width: 992px){
+            display: none;
+        }
+        @media screen and (max-width: 1600px){
+            transform: scale3d(.9,.9,.9);
+        }
+        @media screen and (max-width: 1400px){
+            display: none;
+        }
+    }
+    .one{
+        background: linear-gradient(180deg,#edca85,#f093b0);
+        top: -135px;
+        left: -135px;
+        @media screen and (max-width: 1600px){
+            top: -95px;
+        }
+    }
+    .two{
+        background: linear-gradient(180deg,#b097f2,#a0e9ff);
+        top: -135px;
+        right: -135px;
+        @media screen and (max-width: 1600px){
+            top: -95px;
+        }
+    }
+    .three{
+        background: linear-gradient(180deg,#edca85,#f093b0);
+        bottom: -135px;
+        right: -135px;
+        @media screen and (max-width: 1600px){
+            bottom: -95px;
+        }
+    }
+    .four{
+        background: linear-gradient(180deg,#db85b4,#b097f2);
+        bottom: -135px;
+        left: -135px;
+        @media screen and (max-width: 1600px){
+            bottom: -95px;
+        }
+    }
+    .five{
+        background: linear-gradient(180deg,#b097f2,#a0e9ff);
+        bottom: -270px;
+        left: 0;
+        @media screen and (max-width: 1600px){
+            display: none;
+        }
+    }
+}
+
+#head{
+    animation: head-rotation 3s ease-in-out forwards infinite;
+    transform-origin: bottom;
+    transform-box: fill-box;
+}
+
+#coffee{
+    animation: coffee 1s ease-in-out infinite alternate;
+    transform-origin: bottom;
+}
+#todo1{
+    animation: todo 1s normal forwards infinite;
+}
+#todo2{
+    animation: todo2 1s normal forwards infinite;
+}
+#todo3{
+    animation: todo3 1s normal forwards infinite;
+}
+
+@keyframes head-rotation{
+    0%{transform: rotate(10deg);}
+	50%{transform: rotate(-5deg)}
+	100%{transform: rotate(10deg);}
+    
+}
+
+@keyframes coffee{
+    from{
+        transform: rotateX(0deg);
+    }
+    to{
+        transform: rotateX(30deg);
+    }
+}
+@keyframes todo{
+    0%{
+        opacity: 1;
+    }
+    30%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
+}
+@keyframes todo2{
+    0%{
+        opacity: 1;
+    }
+    50%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
+}
+@keyframes todo3{
+    0%{
+        opacity: 1;
+    }
+    70%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
+}

@@ -1,0 +1,29 @@
+<div class="header">
+    <div class="hamburger" [ngClass]="{'change': showMwebNavbar}">
+        <div class="hamburger-icon" (click)="toggleMwebNavbar()">
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+        </div>
+    </div>
+    <nav [ngClass]="{'open': showMwebNavbar}">
+        <ul class="nav-links" (click)="toggleMwebNavbar()">
+            <li class="link__projects"><a [routerLink]="['']" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}" appEyeActive>Work</a></li>
+            <li><a [routerLink]="['/about']" routerLinkActive="active" appEyeActive>About</a></li>
+            <li><a [routerLink]="['/contact']" routerLinkActive="active" appEyeActive>Contact me</a></li>
+        </ul>
+        <div class="eyes" id="googly-eyes">
+            <div class="eye" appMovingEyes></div>
+            <div class="eyelash"></div>
+        </div>
+        <ul class="icon">
+            <li appEyeActive>
+                <a href="https://www.linkedin.com/in/saavi-varshney-b0b111185/" target="_blank">
+                    <img src="../../assets/images/linkedin.svg" alt="linkedin" height="40px" width="40px">
+                </a>
+            </li>
+        </ul>
+    </nav>
+</div>
+
+

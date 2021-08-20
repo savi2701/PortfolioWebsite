@@ -1,0 +1,74 @@
+$black: #000;
+$white: #fff;
+$purple: #a162e8;
+$pink: #ffc4ff;
+$grey: #222;
+// prple rgba(161, 98, 232, 1) pink rgba(255, 196, 255, 1) blue rgba(160, 233, 255, 1) key 636f941ffd874ad7 api-key AIzaSyCrL3GoVuMAknDmXCLw1TMUpsx2njoUikw
+
+.container{
+    max-width: 1400px;
+    margin: auto auto 5rem;
+    @media screen and (max-width: 1024px){
+        margin: 2rem;
+    }
+}
+.wrapper{
+    margin: 48px 96px;
+    @media screen and (max-width: 1024px){
+        margin: 2rem
+    }
+}
+@mixin flex-align-justify-center{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+@mixin flex-align-justify-between{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+@mixin flex-align-justify-around{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+@mixin flex-justify-between{
+    display: flex;
+    justify-content: space-around;
+}
+
+@mixin coloured-text{
+    font-family: Bogart-med;
+    background-image: linear-gradient(271deg,#a0e9ff 30%,#a162e8 50%,#f093b0 70%,#edca85 94%);
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.main-heading{
+    @include coloured-text();
+    font-size: 4rem;
+    text-align: center;
+    @media screen and (max-width: 786px){
+        font-size: 3rem;
+    }
+}
+.highlighted-anchor{
+    color: $white;
+    font-size: 1.25rem;
+    line-height: 1.2;
+    position: relative;
+    transition: all 0.5s ease-in;
+    &::before{
+        position: absolute;
+        content: '';
+        height: 4px;
+        width: 100%;
+        background-color: $purple;
+        bottom: 0;
+    }
+    &:hover::before{
+        bottom: 5px;
+        height: 7px;
+    }
+}

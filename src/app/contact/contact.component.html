@@ -1,0 +1,37 @@
+<div class="contact">
+    <h1 class="main-heading">Interested? Lets Get in Touch!</h1>
+    <p>I am looking for job oppurtunities, also open to any freelance projects. You can also contact me on  <a href="mailto:saavi.varshney@gmail.com" class="highlighted-anchor"appEyeActive>saavi.varshney@gmail.com</a></p>
+    <div class="contact-body">
+        <div class="contact-form">
+            <form [formGroup]="msgForm" (ngSubmit)="onSubmit()">
+                <div class="form-line">
+                    <div class="form-group">
+                        <input type="text" name="name" id="name" placeholder="Name" autocomplete="false" formControlName="name">
+                        <div class="underline"></div>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" name="email" id="email" placeholder="Email"  autocomplete="off" formControlName="email">
+                        <div class="underline"></div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <input type="text" name="subject" id="subject" placeholder="Subject"  autocomplete="off" formControlName="subject">
+                    <div class="underline"></div>
+                </div>
+                <div class="form-group">
+                    <textarea name="message" id="message" cols="30" rows="5" placeholder="Message"  autocomplete="off" formControlName="message"></textarea>
+                    <div class="underline"></div>
+                </div>
+                <button class="button" appEyeActive>Send Message</button>
+            </form>
+        </div>
+        <div class="contact-maps">
+            <div class="info">
+                Saavi Varshney<br>
+                <span>@</span>: saavi.varshney@gmail.com
+            </div>
+            <div id="mapid"></div>
+        </div>
+    </div>
+    
+</div>

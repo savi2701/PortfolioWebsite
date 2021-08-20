@@ -1,0 +1,38 @@
+@import "../../../assets/mixins.scss";
+
+.container{
+    text-align: center;
+    color: $white;
+    h1{
+        font-size: 5rem;
+        @include coloured-text();
+        @media screen and (max-width: 768px){
+            font-size: 3rem;
+        }
+    }
+    p{
+        color: white;
+        font-size: 1.25rem;
+        line-height: 1.2;
+        @media screen and (max-width: 768px){
+            font-size: 1rem;
+        }
+    }
+    hr{
+        width: 70%;
+        margin: 3rem auto 4rem;
+    }
+    &-aim{
+        text-align: justify;
+        padding: 0 15rem;
+        h2{
+            font-size: 2rem;
+            font-family: Bogart-med;
+            color: $white;
+            margin-bottom: 2rem;
+        }
+        p{
+            line-height: 1.4;
+        }
+    }
+}
