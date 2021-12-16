@@ -3,7 +3,7 @@
     <p>I am looking for job oppurtunities, also open to any freelance projects. You can also contact me on  <a href="mailto:saavi.varshney@gmail.com" class="highlighted-anchor"appEyeActive>saavi.varshney@gmail.com</a></p>
     <div class="contact-body">
         <div class="contact-form">
-            <form [formGroup]="msgForm" (ngSubmit)="onSubmit()">
+            <form [formGroup]="msgForm" (ngSubmit)="onSubmit()" action="mail.php" method="post">
                 <div class="form-line">
                     <div class="form-group">
                         <input type="text" name="name" id="name" placeholder="Name" autocomplete="false" formControlName="name">
