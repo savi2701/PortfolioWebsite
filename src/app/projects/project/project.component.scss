@@ -71,25 +71,39 @@
     flex-wrap: wrap;
 }
 .project{
-    width: 45%;
-    height: 600px;
+    height: fit-content;
     border: 1px solid $grey;
     cursor: pointer;
-    margin-bottom: 8rem;
-    &:nth-of-type(odd){
-        margin-right: 10%;
+    margin-bottom: 2rem;
+    @media screen and (min-width: 768px){
+        width: 45%;
+        margin-bottom: 8rem;
     }
-    &:nth-of-type(even){
-        margin-top: 10rem;
+    &:nth-of-type(odd){
+        @media screen and (min-width: 768px){
+            margin-right: 10%;
+        }
+    }
+    &:nth-of-type(even){ 
+        @media screen and (min-width: 768px){
+            margin-top: 10rem;
+        }
     }
     &-header{
         background: url("../../../assets/images/portfolio2.png") no-repeat;
         background-size: contain;
-        height: 60%;
+        height: 350px;
+        @media screen and (max-width: 768px){
+            min-height: 200px;
+            height: 200px;
+        }
     }
     &-body{
         height: 40%;
         padding: 2rem;
+        @media screen and (max-width: 768px){
+            padding: 1rem;
+        }
         h3,p{
             color: $white;
         }
@@ -101,7 +115,20 @@
         h3{
             font-size: 1.5rem;
             font-family: Bogart;
-            margin-bottom: 3rem;
+            margin-bottom: 1rem;
+            @media screen and (min-width: 768px){
+                font-size: 1rem;
+            }
+        }
+        ul{
+            @media screen and (max-width: 768px){
+                font-size: 0.85rem;
+                padding: 0 1rem;
+            }
+        }
+        li{
+            color: $white;
+            list-style: circle;
         }
     }
     &:hover{

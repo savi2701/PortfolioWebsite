@@ -7,11 +7,14 @@
 </div> -->
 
 <div class="container project-container">
-    <div class="project" *ngFor="let project of projects" appEyeActive (click)="openProject(project.id)">
+    <a class="project" *ngFor="let project of projects" appEyeActive [href]="project.link">
         <div class="project-header" style="background: url({{project.img}}) no-repeat; background-size: contain;"></div>
         <div class="project-body">
             <h3>{{project.heading}}</h3>
-            <p>{{project.subheading}}</p>
+            <ul>
+                <li *ngFor="let subheading of project.subheadings">{{subheading}}</li>
+            </ul>     
+            <a *ngIf="project.gitLink" [href]="project.gitLink" >View on Github</a>
         </div>
-    </div>
+    </a>
 </div>
